@@ -1,0 +1,112 @@
+{% extends 'layout.html' %}
+
+{% block sidebar %}
+<div class="sidebar close">
+    <div class="logo-details">
+        <i class='bx bxs-ghost'></i>
+      <span class="logo_name">EDITTO</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bxs-crop'></i>
+            <span class="link_name">CROP</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">CROP</a></li>
+          <li><a href="#">1:1</a></li>
+          <li><a href="#">3:4</a></li>
+          <li><a href="#">4:3</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bxs-color'></i>
+            <span class="link_name">COLORS</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">COLORS</a></li>
+          <li><a href="#">Black n White</a></li>
+          <li><a href="#">Grayscale</a></li>
+          <li><a href="#">Retro</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bxs-palette' ></i>
+            <span class="link_name">ART</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">ART</a></li>
+          <li><a href="#">Water Color</a></li>
+          <li><a href="#">Pencil</a></li>
+          <li><a href="#">Sketch</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+            <i class='bx bx-save' ></i>
+          <span class="link_name">SAVE</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">SAVE</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+            <li>
+                <a href="#">
+                    <i class='bx bxs-ghost'></i>
+                  <span class="link_name">SAVE</span>
+                </a>
+                <ul class="sub-menu blank">
+                  <li><a class="link_name" href="#">LOGIN/REGISTER</a></li>
+                </ul>
+              </li>
+
+        </a>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <img src="images/logo.svg" alt="profileImg">
+      </div>
+      <i class='bx bx-log-out' ></i>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text">Drop Down Sidebar</span>
+    </div>
+  </section>
+  <script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script>
+{% endblock sidebar %}
+{% block content %}
+    
+{% endblock content %}
