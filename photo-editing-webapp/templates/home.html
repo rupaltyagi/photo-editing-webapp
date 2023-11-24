@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-
+<!-- contains sidebar with editing tools -->
 {% block sidebar %}
 <div class="sidebar close">
     <div class="logo-details">
@@ -66,13 +66,12 @@
             <li>
                 <a href="#">
                     <i class='bx bxs-ghost'></i>
-                  <span class="link_name">SAVE</span>
+                  <span class="link_name">LOGIN/REGISTER</span>
                 </a>
                 <ul class="sub-menu blank">
                   <li><a class="link_name" href="#">LOGIN/REGISTER</a></li>
                 </ul>
               </li>
-
         </a>
       </li>
       <li>
@@ -85,12 +84,30 @@
   </li>
 </ul>
   </div>
+
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' ></i>
       <span class="text">Drop Down Sidebar</span>
     </div>
-  </section>
+  </div>
+</section>
+    <!-- Create upload image and display  image box  -->
+    <div>
+      <form action="{{ url_for('home') }}" enctype="multipart/form-data", method="POST" class="form-data">
+        <input name="img", type="file"/>
+        <input type="submit" />
+      </form> 
+      
+        <div class="container">
+          {% if img %}
+        <img src="{{ img }}" width="50%" height="50%"/>
+        {% endif %}
+      </div>
+      
+    </div>
+  
+
   <script>
   let arrow = document.querySelectorAll(".arrow");
   for (var i = 0; i < arrow.length; i++) {
@@ -107,6 +124,3 @@
   });
   </script>
 {% endblock sidebar %}
-{% block content %}
-    
-{% endblock content %}
